@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+monitoring:
+  service-name: order-service
+  collector-url: http://localhost:8080   # Your collector-service
+  rate-limit: 100
+
+spring:
+  autoconfigure:
+    exclude: gg.jte.springframework.boot.autoconfigure.JteAutoConfiguration

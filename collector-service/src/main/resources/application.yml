@@ -1,0 +1,30 @@
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration
+
+  data:
+    mongodb:
+      primary:
+        uri: mongodb://localhost:27017
+        database: logsdb
+
+      secondary:
+        uri: mongodb://localhost:27017
+        database: metadatadb
+
+server:
+  port: 8080
+
+jwt:
+  secret: "b8f92a75e4ad9a71c263f8e8b9f17d834a1f9db52c8e72ff9e15c3cbf3e2e6d1"
+  expirationMs: 86400000
+
+rateLimiter:
+  defaultLimitPerSecond: 100
+
+logging:
+  level:
+    root: INFO
+    com.leap.monitoring: DEBUG
